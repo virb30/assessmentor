@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\CreateQuestion;
-use App\CreateQuestionInput;
-use App\CreateQuestionOutput;
-use App\Discipline;
-use App\DisciplineRepository;
-use App\DisciplineRepositoryMemory;
-use App\Level;
-use App\LevelRepository;
-use App\LevelRepositoryMemory;
-use App\NotFoundException;
-use App\QuestionRepository;
-use App\QuestionRepositoryMemory;
+use App\Application\UseCase\CreateQuestion\CreateQuestion;
+use App\Application\UseCase\CreateQuestion\CreateQuestionInput;
+use App\Application\UseCase\CreateQuestion\CreateQuestionOutput;
+use App\Domain\Entity\Discipline;
+use App\Domain\Entity\Level;
+use App\Domain\Repository\DisciplineRepository;
+use App\Domain\Repository\LevelRepository;
+use App\Domain\Repository\QuestionRepository;
+use App\Infra\Repository\Memory\DisciplineRepositoryMemory;
+use App\Infra\Repository\Memory\LevelRepositoryMemory;
+use App\Infra\Repository\Memory\QuestionRepositoryMemory;
+use App\Support\Exception\NotFoundException;
 use PHPUnit\Framework\TestCase;
 
 class CreateQuestionText extends TestCase

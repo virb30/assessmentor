@@ -2,7 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Application\UseCase\CreateQuestion;
+
+use App\Domain\Entity\Question;
+use App\Domain\Repository\DisciplineRepository;
+use App\Domain\Repository\LevelRepository;
+use App\Domain\Repository\QuestionRepository;
 
 class CreateQuestion
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-use App\Discipline;
-use App\Level;
-use App\Question;
+use App\Domain\Entity\Discipline;
+use App\Domain\Entity\Level;
+use App\Domain\Entity\Question;
 use DomainException;
 use PHPUnit\Framework\TestCase;
 

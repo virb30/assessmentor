@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Infra\Repository\Memory;
+
+use App\Domain\Entity\Level;
+use App\Domain\Repository\LevelRepository;
+use App\Support\Exception\NotFoundException;
 
 class LevelRepositoryMemory implements LevelRepository
 {

@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Infra\Repository\Memory;
+
+use App\Domain\Entity\Question;
+use App\Domain\Repository\QuestionRepository;
 
 class QuestionRepositoryMemory implements QuestionRepository
 {

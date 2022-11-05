@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Domain\Repository;
+
+use App\Domain\Entity\Question;
 
 interface QuestionRepository
 {

@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace App\Infra\Repository\Memory;
+
+use App\Domain\Entity\Discipline;
+use App\Domain\Repository\DisciplineRepository;
+use App\Support\Exception\NotFoundException;
 
 class DisciplineRepositoryMemory implements DisciplineRepository
 {
