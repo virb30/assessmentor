@@ -1,0 +1,53 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Tests\Unit;
+
+use App\Discipline;
+use App\Level;
+use App\Question;
+use DomainException;
+use PHPUnit\Framework\TestCase;
+
+class QuestionTest extends TestCase
+{
+    public function testShouldCreateQuestionWithoutOptions()
+    {
+        $question = new Question('Enunciado da pergunta', new Discipline('Língua portuguesa'), new Level('Ensino médio'));
+        self::assertInstanceOf(Question::class, $question);
+        self::assertTrue($question->isDiscursive());
+        self::assertEquals('Língua portuguesa', $question->getDiscipline());
+        self::assertEquals('Ensino médio', $question->getLevel());
+        self::assertEquals('Enunciado da pergunta', $question->getStatement());
+        self::assertEmpty($question->getOptions());
+    }
+
+    public function testShouldNotCreateQuestionWithEmptyStatement()
+    {
+        $this->expectException(DomainException::class);
+        $this->expectExceptionMessage("Question statement must not be empty");
+
+        new Question('', new Discipline('Língua portuguesa'), new Level('Ensino médio'));
+    }
+
+    public function testShouldCreateQuestionAndAddOptions()
+    {
+        $question = new Question('Enunciado da pergunta', new Discipline('Matemática'), new Level('Ensino médio'));
+        $question->addOption('Option 1', false);
+        $question->addOption('Option 2', true);
+        $question->addOption('Option 3', false);
+        $question->addOption('Option 4', false);
+        $question->addOption('Option 5', false);
+
+        self::assertInstanceOf(Question::class, $question);
+        self::assertFalse($question->isDiscursive());
+        self::assertEquals('Matemática', $question->getDiscipline());
+        self::assertEquals('Ensino médio', $question->getLevel());
+        self::assertEquals('Enunciado da pergunta', $question->getStatement());
+        $questionOptions = $question->getOptions();
+        self::assertCount(5, $questionOptions);
+        self::assertTrue($questionOptions[1]->isCorrect);
+        self::assertFalse($questionOptions[0]->isCorrect);
+    }
+}
