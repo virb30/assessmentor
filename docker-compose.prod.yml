@@ -1,5 +1,17 @@
 version: "3"
 services:
+  nginx:
+    build:
+      context: ./.docker
+      dockerfile: nginx/Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - internal
+    volumes:
+      - .:/var/www/html
+      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d
+    user: ${UID}:${GID}
   app:
     build:
       context: ./.docker
@@ -16,9 +28,6 @@ services:
     volumes:
       - .:/var/www/html
     user: ${UID}:${GID}
-    ports:
-      - 8000:8000
-    command: php -S 0.0.0.0:8000 -t public/
   composer:
     image: composer
     volumes:
