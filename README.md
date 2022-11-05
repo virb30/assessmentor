@@ -28,9 +28,15 @@ docker-compose exec php php ./vendor/bin/phpunit
 # to specify a test file
 docker-compose exec php php ./vendor/bin/phpunit path/to/FileTest.php
 
-# alternativelly you can use the Makefile command
+# optional: run tests using the Makefile command
 
 make test
 # or
 make test /path/to/FileTest.php
+
+# optional: run tests using shell script
+
+./run-tests.sh
+# or
+./run-tests.sh /path/to/FileTest.php
 ```
