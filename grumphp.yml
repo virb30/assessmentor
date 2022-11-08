@@ -1,0 +1,4 @@
+grumphp:
+    git_hook_variables:
+        EXEC_GRUMPHP_COMMAND: 'docker-compose run -T app'
+    tasks: { phpunit: null }
