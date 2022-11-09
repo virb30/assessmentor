@@ -15,6 +15,7 @@ services:
       - internal
     volumes:
       - .:/var/www/html
+      - ~/.gitconfig:/etc/gitconfig
     user: ${UID}:${GID}
     ports:
       - 8000:8000

@@ -9,9 +9,12 @@ grumphp:
             encoding: 'UTF-8'
         phpunit:
             always_execute: true
-        clover_coverage:
-            clover_file: tests/coverage/coverage.xml
-            level: 100
+        make:
+            task: 'add-coverage'
+            triggered_by: [xml]
     fixer:
         enabled: true
         fix_by_default: true
+    testsuites:
+        git_commit_msg:
+            tasks: [phpcs, phpunit, make]
