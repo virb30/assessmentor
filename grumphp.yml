@@ -12,6 +12,8 @@ grumphp:
         make:
             task: 'add-coverage'
             triggered_by: [xml]
+    parallel:
+        enabled: false
     fixer:
         enabled: true
         fix_by_default: true
