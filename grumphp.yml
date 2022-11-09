@@ -15,7 +15,7 @@ grumphp:
                 priority: 2
         make:
             task: 'add-coverage'
-            triggered_by: [xml]
+            triggered_by: [php, yml, xml]
             metadata: 
                 priority: 1
     parallel:
