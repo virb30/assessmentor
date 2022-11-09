@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667952045">
-  <project timestamp="1667952045">
+<coverage generated="1667952348">
+  <project timestamp="1667952348">
     <file name="/var/www/html/src/Application/UseCase/CreateQuestion/CreateQuestion.php">
       <class name="App\Application\UseCase\CreateQuestion\CreateQuestion" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="13" coveredelements="13"/>
