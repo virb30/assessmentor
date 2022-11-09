@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667952001">
-  <project timestamp="1667952001">
+<coverage generated="1667952017">
+  <project timestamp="1667952017">
     <file name="/var/www/html/src/Application/UseCase/CreateQuestion/CreateQuestion.php">
       <class name="App\Application\UseCase\CreateQuestion\CreateQuestion" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="13" coveredelements="13"/>
@@ -135,7 +135,7 @@
     </file>
     <file name="/var/www/html/src/Infra/Repository/Memory/QuestionRepositoryMemory.php">
       <class name="App\Infra\Repository\Memory\QuestionRepositoryMemory" namespace="global">
-        <metrics complexity="3" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="9" coveredelements="7"/>
+        <metrics complexity="3" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
       </class>
       <line num="15" type="method" name="save" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="17" type="stmt" count="1"/>
@@ -144,9 +144,9 @@
       <line num="22" type="method" name="clear" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="24" type="stmt" count="3"/>
       <line num="25" type="stmt" count="3"/>
-      <line num="28" type="method" name="count" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="30" type="stmt" count="0"/>
-      <metrics loc="33" ncloc="33" classes="1" methods="3" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="5" elements="9" coveredelements="7"/>
+      <line num="28" type="method" name="count" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <metrics loc="33" ncloc="33" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="9" coveredelements="9"/>
     </file>
     <file name="/var/www/html/src/Support/Exception/NotFoundException.php">
       <class name="App\Support\Exception\NotFoundException" namespace="global">
@@ -154,6 +154,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="15" loc="363" ncloc="363" classes="11" methods="26" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="52" elements="79" coveredelements="77"/>
+    <metrics files="15" loc="363" ncloc="363" classes="11" methods="26" coveredmethods="26" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="53" elements="79" coveredelements="79"/>
   </project>
 </coverage>
