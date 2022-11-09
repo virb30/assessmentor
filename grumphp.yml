@@ -1,6 +1,6 @@
 grumphp:
     git_hook_variables:
-        EXEC_GRUMPHP_COMMAND: 'docker-compose run -e XDEBUG_MODE=coverage -T app'
+        EXEC_GRUMPHP_COMMAND: ['docker-compose', 'run', '-e XDEBUG_MODE=coverage', '-T', '--no-deps', 'app']
     stop_on_failure: true
     tasks: 
         phpunit:
