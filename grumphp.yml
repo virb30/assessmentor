@@ -1,13 +1,17 @@
 grumphp:
     git_hook_variables:
-        EXEC_GRUMPHP_COMMAND: ['docker-compose', 'run', '-e XDEBUG_MODE=coverage', '-T', '--no-deps', 'app']
+        EXEC_GRUMPHP_COMMAND: ['docker-compose', 'run', '-e', 'XDEBUG_MODE=coverage', '-T', '--no-deps', 'app']
     stop_on_failure: true
     tasks: 
         phpcs:
             standard: PSR12
             tab_width: 4
-            encoding: UTF-8
+            encoding: 'UTF-8'
         phpunit:
             always_execute: true
+        clover_coverage:
+            clover_file: tests/coverage/coverage.xml
+            level: 100
     fixer:
-        enabled: false
+        enabled: true
+        fix_by_default: true
