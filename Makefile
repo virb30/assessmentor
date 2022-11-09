@@ -5,4 +5,4 @@ test:
 	docker-compose exec --user ${UID}:${GID} app php ./vendor/bin/phpunit $(filter-out $@, $(MAKECMDGOALS))
 
 add-coverage:
-	git add tests/coverage/coverage.xml
+	git update-index --add tests/coverage/coverage.xml
