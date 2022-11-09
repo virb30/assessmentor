@@ -7,13 +7,19 @@ grumphp:
             standard: PSR12
             tab_width: 4
             encoding: 'UTF-8'
+            metadata: 
+                priority: 1
         phpunit:
             always_execute: true
+            metadata: 
+                priority: 2
         make:
             task: 'add-coverage'
             triggered_by: [xml]
+            metadata: 
+                priority: 3
     parallel:
-        enabled: false
+        enabled: true
     fixer:
         enabled: true
         fix_by_default: true
