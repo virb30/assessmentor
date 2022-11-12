@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668277868">
-  <project timestamp="1668277868">
+<coverage generated="1668279759">
+  <project timestamp="1668279759">
     <file name="/var/www/html/src/Application/UseCase/CreateExam/CreateExam.php">
       <class name="App\Application\UseCase\CreateExam\CreateExam" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
