@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668283271">
-  <project timestamp="1668283271">
+<coverage generated="1668283339">
+  <project timestamp="1668283339">
     <file name="/home/runner/work/assessmentor/assessmentor/src/Application/UseCase/CreateExam/CreateExam.php">
       <class name="App\Application\UseCase\CreateExam\CreateExam" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
