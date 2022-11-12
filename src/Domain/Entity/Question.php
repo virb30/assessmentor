@@ -12,7 +12,8 @@ class Question
     public function __construct(
         string $statement,
         protected Discipline $discipline,
-        protected Level $level
+        protected Level $level,
+        protected int $id = 0,
     ) {
         $this->statement = new QuestionStatement($statement);
     }
@@ -45,5 +46,15 @@ class Question
     public function addOption($statement, $isCorrect = false): void
     {
         array_push($this->options, new QuestionOption($statement, $isCorrect));
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
     }
 }

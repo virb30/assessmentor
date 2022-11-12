@@ -15,6 +15,7 @@ class QuestionRepositoryMemory implements QuestionRepository
     public function save(Question $question): Question
     {
         $this->id++;
+        $question->setId($this->id);
         $this->questions[$this->id] = $question;
         return $question;
     }

@@ -14,7 +14,11 @@ class QuestionTest extends TestCase
 {
     public function testShouldCreateQuestionWithoutOptions()
     {
-        $question = new Question('Enunciado da pergunta', new Discipline('Língua portuguesa'), new Level('Ensino médio'));
+        $question = new Question(
+            statement: 'Enunciado da pergunta',
+            discipline: new Discipline(name: 'Língua portuguesa'),
+            level: new Level(name: 'Ensino médio')
+        );
         self::assertInstanceOf(Question::class, $question);
         self::assertTrue($question->isDiscursive());
         self::assertEquals('Língua portuguesa', $question->getDiscipline());
@@ -28,12 +32,20 @@ class QuestionTest extends TestCase
         $this->expectException(DomainException::class);
         $this->expectExceptionMessage("Question statement must not be empty");
 
-        new Question('', new Discipline('Língua portuguesa'), new Level('Ensino médio'));
+        new Question(
+            statement: '',
+            discipline: new Discipline(name: 'Língua portuguesa'),
+            level: new Level(name: 'Ensino médio')
+        );
     }
 
     public function testShouldCreateQuestionAndAddOptions()
     {
-        $question = new Question('Enunciado da pergunta', new Discipline('Matemática'), new Level('Ensino médio'));
+        $question = new Question(
+            statement: 'Enunciado da pergunta',
+            discipline: new Discipline(name: 'Matemática'),
+            level: new Level(name: 'Ensino médio')
+        );
         $question->addOption('Option 1', false);
         $question->addOption('Option 2', true);
         $question->addOption('Option 3', false);

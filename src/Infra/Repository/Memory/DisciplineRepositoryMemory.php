@@ -6,7 +6,7 @@ namespace App\Infra\Repository\Memory;
 
 use App\Domain\Entity\Discipline;
 use App\Domain\Repository\DisciplineRepository;
-use App\Support\Exception\NotFoundException;
+use App\Exception\NotFoundException;
 
 class DisciplineRepositoryMemory implements DisciplineRepository
 {
@@ -25,6 +25,7 @@ class DisciplineRepositoryMemory implements DisciplineRepository
     public function save(Discipline $discipline): Discipline
     {
         $this->id++;
+        $discipline->setId($this->id);
         $this->disciplines[$this->id] = $discipline;
         return $discipline;
     }

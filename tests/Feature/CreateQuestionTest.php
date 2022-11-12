@@ -15,7 +15,7 @@ use App\Domain\Repository\QuestionRepository;
 use App\Infra\Repository\Memory\DisciplineRepositoryMemory;
 use App\Infra\Repository\Memory\LevelRepositoryMemory;
 use App\Infra\Repository\Memory\QuestionRepositoryMemory;
-use App\Support\Exception\NotFoundException;
+use App\Exception\NotFoundException;
 use PHPUnit\Framework\TestCase;
 
 class CreateQuestionText extends TestCase
@@ -46,8 +46,8 @@ class CreateQuestionText extends TestCase
 
     public function testShouldCreateQuestion()
     {
-        $this->disciplineRepository->save(new Discipline('Matemática'));
-        $this->levelRepository->save(new Level('Ensino médio'));
+        $this->disciplineRepository->save(new Discipline(name: 'Matemática'));
+        $this->levelRepository->save(new Level(name: 'Ensino médio'));
 
         $input = new CreateQuestionInput(
             statement: 'Test question',
@@ -70,7 +70,7 @@ class CreateQuestionText extends TestCase
 
     public function testShouldThrowExceptionIfDisciplineNotExists()
     {
-        $this->levelRepository->save(new Level('Ensino médio'));
+        $this->levelRepository->save(new Level(name: 'Ensino médio'));
 
         $input = new CreateQuestionInput(
             statement: 'Test question',
@@ -93,7 +93,7 @@ class CreateQuestionText extends TestCase
 
     public function testShouldThrowExceptionIfLevelNotExists()
     {
-        $this->disciplineRepository->save(new Discipline('Matemática'));
+        $this->disciplineRepository->save(new Discipline(name: 'Matemática'));
 
         $input = new CreateQuestionInput(
             statement: 'Test question',

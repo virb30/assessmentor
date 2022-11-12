@@ -6,7 +6,7 @@ namespace App\Infra\Repository\Memory;
 
 use App\Domain\Entity\Level;
 use App\Domain\Repository\LevelRepository;
-use App\Support\Exception\NotFoundException;
+use App\Exception\NotFoundException;
 
 class LevelRepositoryMemory implements LevelRepository
 {
@@ -25,6 +25,7 @@ class LevelRepositoryMemory implements LevelRepository
     public function save(Level $level): Level
     {
         $this->id++;
+        $level->setId($this->id);
         $this->levels[$this->id] = $level;
         return $level;
     }
