@@ -13,7 +13,6 @@ class DisciplineRepositoryMemory implements DisciplineRepository
     private array $disciplines = [];
     private int $id = 0;
 
-
     public function getById(int $idDiscipline): Discipline
     {
         if (!array_key_exists($idDiscipline, $this->disciplines)) {
