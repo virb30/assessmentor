@@ -1,3 +1,5 @@
+![Code Coverage Badge](./coverage_badge.svg) 
+
 # Assessmentor
 
 API for produce flexible assessments
