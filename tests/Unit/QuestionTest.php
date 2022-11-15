@@ -27,6 +27,30 @@ class QuestionTest extends TestCase
         self::assertEmpty($question->getOptions());
     }
 
+    public function testShouldCreateQuestionAndSetId()
+    {
+        $question = new Question(
+            statement: 'Enunciado da pergunta',
+            discipline: new Discipline(name: 'Língua portuguesa'),
+            level: new Level(name: 'Ensino médio')
+        );
+        self::assertInstanceOf(Question::class, $question);
+        $question->setId(1);
+        self::assertEquals(1, $question->getId());
+    }
+
+    public function testShouldCreateQuestionWithId()
+    {
+        $question = new Question(
+            statement: 'Enunciado da pergunta',
+            discipline: new Discipline(name: 'Língua portuguesa'),
+            level: new Level(name: 'Ensino médio'),
+            id: 1
+        );
+        self::assertInstanceOf(Question::class, $question);
+        self::assertEquals(1, $question->getId());
+    }
+
     public function testShouldNotCreateQuestionWithEmptyStatement()
     {
         $this->expectException(DomainException::class);

@@ -46,4 +46,14 @@ class ExamTest extends TestCase
         $this->expectExceptionMessage("Please provide a description for the exam");
         new Exam("", new Level(id: 1, name: 'Ensino médio'));
     }
+
+    public function testShouldNotAddDisciplineOnExamWithInvalidQuantity()
+    {
+        $exam = new Exam("Exam 1", new Level(id: 1, name: 'Ensino médio'));
+
+        $this->expectException(DomainException::class);
+        $this->expectExceptionMessage("Please provide a valid quantity");
+
+        $exam->addExamDiscipline(new Discipline('Matemática', 1), 0);
+    }
 }
